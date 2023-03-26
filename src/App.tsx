@@ -1,9 +1,12 @@
-import './App.css'
+import AllRoutes from "./routes/AllRoutes"
+import { Suspense } from "react"
 
 function App() {
 
   return (
-    <div>Main app</div>
+    <Suspense fallback="loading..">
+      <AllRoutes/>
+    </Suspense>
   )
 }
 

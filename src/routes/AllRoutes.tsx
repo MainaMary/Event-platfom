@@ -15,3 +15,4 @@ const routesList = [
 const AllRoutes = () =>{
     return <Routes>{routesList.map(path =><Route path={path.path} element={path.component}/>)}</Routes>
 }
+export default AllRoutes
