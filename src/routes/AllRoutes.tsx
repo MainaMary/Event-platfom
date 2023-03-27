@@ -1,5 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import PublicRoutes from "./PublicRoutes";
+
 const Home = React.lazy(()=> import('../pages/Home'))
 const Error = React.lazy(() =>import('../pages/Error'))
 const routesList = [
