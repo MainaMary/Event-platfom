@@ -1,9 +1,12 @@
 import React from 'react'
 import { baseUrl } from '../url/baseUrl'
+import Categories from './Categories'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <Categories/>
+    </div>
   )
 }
 
