@@ -4,9 +4,9 @@ import axios from 'axios'
 import { baseUrl } from '../url/baseUrl'
 
 const Categories = () => {
-    const fetchEventDetails = async () =>{
+    const fetchEventCategory = async () =>{
         try{
-        const response = await axios.get('https://www.eventbriteapi.com/v3/subcategories/')
+        const response = await axios.get(`https://www.eventbriteapi.com/v3/subcategories/&API_TOKEN=${import.meta.env.REACT_APP_API_TOKEN}`)
         console.log(response)
         return response.data
         }
@@ -16,8 +16,8 @@ const Categories = () => {
 
     }
     const { isFetching,  isLoading, isError, data, error } = useQuery({
-        queryKey: ['todos'],
-        queryFn: fetchEventDetails,
+        queryKey: ['categories'],
+        queryFn: fetchEventCategory,
       })
       if (isLoading) {
         return <span>Loading...</span>
