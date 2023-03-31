@@ -1,8 +1,8 @@
-import React from 'react'
-
-const CustomButton = () => {
+import { BtnProps } from "../model/types"
+const CustomButton = (props:BtnProps) => {
+const {name, onClick, type, children, disabled, className=''} = props
   return (
-    <div>CustomButton</div>
+    <button  disabled={disabled} className={className} name={name} onClick={onClick} type={type}>{children}</button>
   )
 }
 
