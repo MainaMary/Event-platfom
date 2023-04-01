@@ -16,9 +16,9 @@ const menuItems = [
 ]
 const Navbar = () => {
   return (
-    <nav className='flex h-24 items-center justify-between'>
+    <nav className='flex h-24 items-center justify-between px-12 shadow-md'>
       <h2>Raver</h2>
-      <ul className='flex'>
+      <ul className='flex w-[30%] justify-between'>
         {menuItems.map(({label, path})=><Link key={label} to={path}>{label}</Link>)}
       </ul>
       <div>
