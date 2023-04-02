@@ -3,12 +3,15 @@ import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import { baseUrl } from '../url/baseUrl'
 import CustomInput from '../components/CustomInput'
+import CustomButton from '../components/CustomButton'
 
 const Categories = () => {
   const [search, setSearch] = useState<string>('')
+  const [inputError, setInputError]= useState<string>('')
   const handleChange =(e:any)=>{
     e.preventDefault()
     setSearch(e.target.value)
+    setInputError('')
   }
     const fetchEventCategory = async () =>{
         try{
@@ -33,9 +36,17 @@ const Categories = () => {
         return <span>Error: {error.message}</span>
       }
     
+      const handleSubmit = (e:any) =>{
+        if(!search){
+          setInputError('Please submit a value')
+
+        }
+      }
   return (
     <div>
-      <CustomInput value={search} onChange={handleChange}/>
+     <form onSubmit ={handleSubmit}>
+     <CustomInput value={search} onChange={handleChange} type='text'/>
+     </form>
     </div>
   )
 }
