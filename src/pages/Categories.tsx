@@ -15,7 +15,7 @@ const Categories = () => {
   }
     const fetchEventCategory = async () =>{
         try{
-        const response = await axios.get(`https://www.eventbriteapi.com/v3/subcategories/&API_TOKEN=${import.meta.env.REACT_APP_API_TOKEN}`)
+        const response = await axios.get(`https://www.eventbriteapi.com/v3/events/event_id/attendees/attendee_id&API_TOKEN=${import.meta.env.REACT_APP_API_TOKEN}`)
         console.log(response)
         return response.data
         }
